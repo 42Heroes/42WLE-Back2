@@ -82,6 +82,12 @@ export class Users {
 
   @Prop()
   joinDate: Date;
+
+  @Prop({ default: new Date() })
+  createdAt: Date;
+
+  @Prop({ default: new Date() })
+  updatedAt: Date;
 }
 
 export const UsersSchema = SchemaFactory.createForClass(Users);
