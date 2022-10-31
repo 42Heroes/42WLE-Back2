@@ -1,15 +1,22 @@
-import { Injectable, NotFoundException } from '@nestjs/common';
+import {
+  forwardRef,
+  Inject,
+  Injectable,
+  NotFoundException,
+} from '@nestjs/common';
 import { CreateUsersDto } from './dto/create-users.dto';
 import { UpdateUsersDto } from './dto/update-users.dto';
 import { InjectModel } from '@nestjs/mongoose';
 import { Users, UsersDocument } from '../schemas/users.schema';
 import { Model } from 'mongoose';
 import { FindAllInterface } from './interfaces/find-all.interface';
+import { AuthService } from '../auth/auth.service';
 
 @Injectable()
 export class UsersService {
   constructor(
-    @InjectModel(Users.name) private userModel: Model<UsersDocument>,
+    @InjectModel(Users.name)
+    private userModel: Model<UsersDocument>,
   ) {}
   create(createUserDto: CreateUsersDto) {
     return 'This action adds a new user';
@@ -52,7 +59,7 @@ export class UsersService {
     if (!user) {
       throw new NotFoundException('Could not find user.');
     }
-    return `This action returns a #${id} user`;
+    return user;
   }
 
   update(id: number, updateUserDto: UpdateUsersDto) {
