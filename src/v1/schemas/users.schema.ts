@@ -24,7 +24,6 @@ export class Users {
       {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Users',
-        autopopulate: true,
       },
     ],
   })
@@ -50,7 +49,6 @@ export class Users {
       {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Users',
-        autopopulate: true,
       },
     ],
   })
@@ -61,7 +59,6 @@ export class Users {
       {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Posts',
-        autopopulate: true,
       },
     ],
   })
@@ -76,7 +73,6 @@ export class Users {
   @Prop({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'ChatRooms',
-    autopopulate: true,
   })
   chatRooms: ChatRooms[];
 

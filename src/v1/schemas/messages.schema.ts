@@ -10,14 +10,12 @@ export class Messages {
   @Prop({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'ChatRooms',
-    autopopulate: true,
   })
   chatRoomId: ChatRooms;
 
   @Prop({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Users',
-    autopopulate: true,
   })
   userId: Users;
 

@@ -9,7 +9,6 @@ export class Posts {
   @Prop({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Users',
-    autopopulate: true,
   })
   author: Users;
 
@@ -18,7 +17,6 @@ export class Posts {
       {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Users',
-        autopopulate: true,
       },
     ],
   })
