@@ -77,7 +77,7 @@ export class Users {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'ChatRooms',
     autopopulate: true,
-  }) // TODO: chatRoom 스키마 생성 후 변경
+  })
   chatRooms: ChatRooms[];
 
   @Prop()
