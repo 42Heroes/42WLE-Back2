@@ -7,7 +7,7 @@ export type UsersDocument = Users & mongoose.Document;
 
 @Schema()
 export class Users {
-  @Prop()
+  @Prop({ required: true })
   nickname: string;
 
   @Prop({ default: null })
@@ -29,17 +29,17 @@ export class Users {
   })
   likeYou: Users[];
 
-  @Prop()
+  @Prop({ required: true })
   intraId: string;
 
-  @Prop()
-  githubId: string;
+  @Prop({ default: null })
+  githubId: string | null;
 
-  @Prop()
+  @Prop({ required: true })
   country: string;
 
-  @Prop()
-  introduction: string;
+  @Prop({ default: null })
+  introduction: string | null;
 
   @Prop([String])
   hashtags: string[];
@@ -64,10 +64,10 @@ export class Users {
   })
   savedPosts: Posts[];
 
-  @Prop()
+  @Prop({ default: false })
   isRegisterDone: boolean;
 
-  @Prop()
+  @Prop({ required: true })
   campus: string;
 
   @Prop({
@@ -76,8 +76,8 @@ export class Users {
   })
   chatRooms: ChatRooms[];
 
-  @Prop()
-  joinDate: Date;
+  @Prop({ default: null })
+  joinDate: Date | null;
 }
 
 export const UsersSchema = SchemaFactory.createForClass(Users);
