@@ -9,7 +9,7 @@ export class UsersController {
 
   @Get()
   async getUserList(): Promise<UsersList[]> {
-    const users: Users[] = await this.usersService.getUsers();
+    const users: Users[] = await this.usersService.findAll();
     const result: UsersList[] = users.map(user => {
       return {
         _id: user._id,
