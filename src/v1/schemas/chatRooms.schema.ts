@@ -12,7 +12,6 @@ export class ChatRooms {
   @Prop({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Users',
-    autopopulate: true,
   })
   users: Users[];
 }

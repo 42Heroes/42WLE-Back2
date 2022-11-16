@@ -10,14 +10,12 @@ export class Comments {
   @Prop({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Posts',
-    autopopulate: true,
   })
   postId: Posts;
 
   @Prop({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Comments',
-    autopopulate: true,
   })
   parentId: Comments;
 
@@ -27,7 +25,6 @@ export class Comments {
   @Prop({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Users',
-    autopopulate: true,
   })
   userId: Users;
 
@@ -39,7 +36,6 @@ export class Comments {
       {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Users',
-        autopopulate: true,
       },
     ],
   })

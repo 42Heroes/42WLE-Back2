@@ -20,9 +20,16 @@ export class UsersController {
     return this.userService.create(createUserDto);
   }
 
+  /*role guard에서 me의 id를 받아와야함*/
   @Get()
   findAll() {
     return this.userService.findAll();
+  }
+
+  /*role guard 추가*/
+  @Get('me')
+  findMe(@Body('id') id: string) {
+    return this.userService.findMe(+id);
   }
 
   @Get(':id')
